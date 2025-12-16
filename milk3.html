@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ksheera Milk 🥛 Premium Organic Dairy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://ksheera.milkmaster.co/uploads/site_images/2025-01-05_1736041984.png" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0b0b;
+color:#f5e6c8;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#000;
+border-bottom:1px solid gold;
+}
+header img{height:70px;}
+header span{font-size:14px;color:#d4af37;}
+
+/* HERO */
+.hero{
+height:80vh;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://tse4.mm.bing.net/th/id/OIP.Ws_vSNUaKqs5pfWezQKUvQHaEO?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:50px;
+color:#d4af37;
+}
+
+/* PRODUCTS */
+section{padding:70px 8%;}
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+.card{
+background:#111;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(212,175,55,.3);
+}
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+.card .info{
+padding:20px;
+text-align:center;
+}
+.card h3{color:#d4af37;}
+.price{margin-top:5px;font-size:18px;}
+.card button{
+margin-top:15px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:#d4af37;
+font-weight:600;
+cursor:pointer;
+}
+
+/* CART */
+#cart{
+margin-top:50px;
+background:#111;
+padding:30px;
+border-radius:20px;
+}
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:8px 0;
+}
+.remove-btn{
+background:red;
+border:none;
+color:white;
+padding:4px 10px;
+border-radius:20px;
+cursor:pointer;
+}
+#total{
+margin-top:15px;
+font-size:18px;
+color:#d4af37;
+}
+#orderBtn{
+margin-top:20px;
+padding:14px 30px;
+background:#25D366;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid gold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://content.jdmagicbox.com/v2/comp/kakinada/q4/9999px884.x884.250125102128.z8q4/catalogue/ksheera-milk-kakinada-beverage-retailers-9rhys1lrfa.jpg">
+<span> <h3>“మా పాలు తాగితే… ప్యాకెట్ పాలు కూడా సిగ్గుపడతాయి 😂🥛”</h3>  📍Duvvada | 📱 9177309356</span>
+</header>
+
+<div class="hero">
+<h1>Pure Organic Milk<br>Delivered to Your Home</h1>
+</div>
+
+<section>
+<h2 style="text-align:center;color:#d4af37;margin-bottom:40px;">Our Products</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://png.pngtree.com/png-vector/20240130/ourmid/pngtree-farmer-milking-cow-png-image_11515742.png">
+<div class="info">
+<h3>Cow Milk</h3>
+<div class="price">₹70 / Litre</div>
+<button onclick="addToCart('Cow Milk',70)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/51d1be07-bde1-48a2-a436-d41f0ef50094/did7w42-b0ca042a-7f8b-4f23-a9f2-f15f9ae8da47.jpg/v1/fill/w_1192,h_670,q_70,strp/african_buffalo___4k__uhd__video_by_aimages_did7w42-pre.jpg">
+<div class="info">
+<h3>Buffalo Milk</h3>
+<div class="price">₹90 / Litre</div>
+<button onclick="addToCart('Buffalo Milk',90)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://zaykarecipes.com/wp-content/uploads/2017/02/curd-recipe-1024x683.jpg">
+<div class="info">
+<h3>kunda perugu/curd</h3>
+<div class="price">₹100 / Kg</div>
+<button onclick="addToCart('kunda perugu/Curd',100)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.vecteezy.com/system/resources/previews/015/933/280/non_2x/pure-tup-or-desi-ghee-also-known-as-clarified-liquid-butter-free-photo.jpg">
+<div class="info">
+<h3>Ghee</h3>
+<div class="price">₹1200 / Litre</div>
+<button onclick="addToCart('Ghee',1200)">Add to Cart</button>
+</div>
+</div>
+
+</div>
+
+<div id="cart">
+<h3>Your Cart</h3>
+<div id="cartItems"></div>
+<div id="total">Total: ₹0</div>
+<button id="orderBtn" onclick="sendWhatsApp()">Order via WhatsApp</button>
+</div>
+</section>
+
+<footer>
+<p>© 2025 Ksheera Milk | Fresh & Organic</p>
+<p>📧 ksheeramilk@gmail.com</p>
+</footer>
+
+<script>
+let cart=[];
+let total=0;
+
+function addToCart(item,price){
+cart.push({item,price});
+total+=price;
+renderCart();
+}
+
+function removeItem(index){
+total-=cart[index].price;
+cart.splice(index,1);
+renderCart();
+}
+
+function renderCart(){
+let box=document.getElementById('cartItems');
+box.innerHTML='';
+cart.forEach((i,index)=>{
+box.innerHTML+=`
+<div class="cart-item">
+<span>${i.item} - ₹${i.price}</span>
+<button class="remove-btn" onclick="removeItem(${index})">❌</button>
+</div>`;
+});
+document.getElementById('total').innerText="Total: ₹"+total;
+}
+
+function sendWhatsApp(){
+if(cart.length==0){alert("Cart Empty");return;}
+let msg="Hello Ksheera farm🐃,%0AOrder Details:%0A";
+cart.forEach(i=>msg+=`• ${i.item} - ₹${i.price}%0A`);
+msg+=`%0ATotal Amount: ₹${total}`;
+window.open("https://wa.me/9177309356?text="+msg,"_blank");
+}
+</script>
+
+</body>
+</html>
